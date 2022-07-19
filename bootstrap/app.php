@@ -11,6 +11,8 @@
 |
 */
 
+use App\Providers\TodoServiceProvider;
+
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
@@ -41,6 +43,7 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+$app->register(TodoServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Return The Application
